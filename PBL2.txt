@@ -1,0 +1,91 @@
+PBL2 - Portifólio de Aprendizagem
+
+Objetivo: O objetivo desta atividade é a integração da aplicação web com o banco de dados por meio do Mapeamento Objeto Relational (ORM - Object Relational Mapping).
+
+Para o módulo sorteado (Lista de temas no arquivo abaixo), ajustar e criar os seguintes arquivos.
+
+Models
+Para o módulo sorteado, criar os métodos de listagem e cadastro em cada um dos modelos.
+Views
+Criar página para cadastro de no mínimo dois modelos do módulo sorteado (Exemplo: Pessoa [Cliente, Funcionário Garçon])
+Criar página de listagem de no mínimo 2 módulos
+Controllers (Rotas)
+Redirecionar para as página de cadastro.
+Redirecionar para as páginas de listagem.
+Salvar no banco de dados
+No projeto abaixo, existe um arquivo chamado seeds no diretório utils, neste arquivo estão sendo realizadas as inserções no banco de dados.
+
+Estrutura do projeto para o PBL 2
+
+PBL2-restaurant.zip Download PBL2-restaurant.zip 
+
+Temas sorteados
+
+temas.pdf Download temas.pdf 
+
+Informações Adicionais
+
+Para cada módulo sorteado, precisarão ser entregues as seguintes implementações:
+
+Billing
+Cadastro de Forma de Cobrança (PIX, Cheque, Crédito, Débito, Dinheiro);
+Cadastro de Cobrança (Realizar a cobrança de uma comanda).
+Na página de cadastro de cobrança, precisa ser enviada a lista de formas de cobrança para que o usuário selecione qual quer utilizar.
+Ao salvar uma cobrança, precisa ser salvo no banco de dados a ligação entre forma de cobrança e cobrança.
+Criar uma instância de BillingBillingForms.
+Especificar os campos billing_id, id de billing_form_id e value.
+Listagem de Cobranças (com todos os campos de cobrança e também a forma de cobrança utiliza).
+Payment
+Cadastro de horas trabalhadas (classe WorkingTimeRecord) por um garçom existente no banco de dados.
+Precisa ser enviado para a view de cadastro de horas uma lista de garçons, o usuário vai selecionar o garçom e registrar um número de horas para o mesmo.
+Salvar as horas do respectivo garçom selecionado no banco de dados.
+Cadastro de pagamento para os funcionários serviços gerais.
+Precisa ser enviado para a view a lista de funcionários para que o usuário selecione um deles para realizar o pagamento.
+Salvar o pagamento para o funcionário selecionado.
+Listar os pagamentos realizados.
+People
+Cadastro de Clientes (classe Client).
+Clientes são tipos de pessoas (classe People).
+Primeiramento precisa ser criada uma instância da classe People (com todos os campos de pessoa).
+Clientes possuem um enderesso (classe Address).
+Criar uma instância da classe Address (contendo todos os campos de endereço).
+ligar o endereço a pessoa criada inicialmente.
+Criar um instância da classe Client, a qual está associada a pessoa (People) criada anteriormente. 
+Salvar todos os dados no banco de dados utilizando a sessão (db.session).
+Cadastro de Fucionários Garçom (classe Employee e classe Waiter). 
+Precisa das mesmas informações de cliente, (instância de People, instancia de Address).
+Criar uma instância de Employee, a qual está associada a People.
+Criar uma instância da classe Waiter, a qual está associada a Employee.
+Salvar todos os dados no banco de dados utilizando a sessão (db.session).
+Cadastro de Fucionários Serviços Gerais (classe Employee e classe GeneralService). 
+Precisa das mesmas informações de funcionário garçom, (instância de People, instancia de Address).
+Criar uma instância de Employee, a qual está associada a People.
+Criar uma instância da classe GeneralService, a qual está associada a Employee.
+Salvar todos os dados no banco de dados utilizando a sessão (db.session).
+Criar página para listagem de Cliente, Garçons ou Serviços Gerais.
+OBS:
+Como os dados necessários para os três tipos de pessoas (Client, Waiter e GeneralService) do restaurante são muito similares, é possivel reutilizar grande parte do código implementado.
+Caso não tenham tempo de implementar todos, um deles já é suficiente para a apresentação.
+Product
+Cadastro dos produtos (classe Product).
+Salvar os produtos no banco de dados criando as instancias de Product.
+Salvar todos os dados no banco de dados utilizando a sessão (db.session).
+Cadastro dos ingredientes (classe Ingredient).
+Salvar os ingredientes no banco de dados, utilizados para a confecção dos produtos.
+Salvar todos os dados no banco de dados utilizando a sessão (db.session).
+Vinculação dos produtos aos ingredientes.
+Precisa enviar para a página de vinculação a lista de produtos (Product) e ingredientes (Ingredient).
+Vincular o produto e o ingrediente selecionados pelo usuário.
+Salvar todos os dados no banco de dados utilizando a sessão (db.session).
+Criar a página para listagem de produtos.
+Criar a página para listagem de ingredientes.
+Ticket
+Cadastro de novas comandas para os clientes (classe Ticket).
+Precisa ser enviada uma lista de clients (classe Client) para a página de cadastro.
+Salvar a nova comanda para o cliente selecionado pelo usuário utilizando a sessão (db.session).
+Cadastro de pedidos (classe Order).
+Precisa ser enviada a lista de produtos (classe Product) e comandas (classe Ticket) para a página de cadastro de pedidos.
+Vincular o produto selecionado na comanda selecionada pelo usuário.
+Salvar todos os dados no banco de dados utilizando a sessão (db.session).
+Listar as comandas cadastradas.
+Listar os pedidos cadastrados.
