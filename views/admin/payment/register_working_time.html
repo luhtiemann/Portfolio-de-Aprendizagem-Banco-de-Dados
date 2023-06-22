@@ -1,0 +1,65 @@
+{% extends "payment/payment_index.html" %}
+{% import 'utils/forms.html' as forms %}
+
+{% block main %}
+<main>
+    <div class="vertical-center">
+        <div class="container view">
+            <div class="justify-content-center">
+                <div class="container-fluid px-4">
+                <h3 class="mt-4">Cadastro de Tempo Trabalhado</h3>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="/admin/">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="/admin/payment/">Pagamento</a></li>
+                    <li class="breadcrumb-item active">Cadastro de Tempo Trabalhado</li>
+                </ol>
+                <div class="container-fluid px-4">
+                    <div class="row">
+                        <div class="vertical-center">
+                            <div class="container">
+                                <div class="card">
+                                    <div class="card-header">
+                                    Cadastrar de Tempo Trabalhado
+                                    </div>
+                                    <div class="card-body">
+                                        <form class="row g-3 justify-content-center" enctype="multipart/form-data" action="/admin/payment/save_working_time" method="POST">
+                                            {{ forms.input(label = 'Identificação do Garçom', name = 'waiter_id', id = 'waiter_id', box_size = 5) }}
+                                            {{ forms.input(label = 'Identificação do Pagamento', name = 'payment_id', id = 'payment_id', box_size = 5) }}
+                                            {{ forms.input(label = 'Data de referência', name = 'record_datetime', id = 'record_datetime', box_size = 3) }}
+                                            {{ forms.input(label = 'Número de horas', name = 'number_of_hours', id = 'number_of_hours', box_size = 3) }}
+                                            {{ forms.button(label = 'Cadastrar Tempo Trabalhado', box_size = 12) }}
+
+                                        </form>
+                                    </div>
+                                    <table id="view_billings" class="table table-striped table-bordered" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Identificação do Garçom</th>
+                                                <th>Nome</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for waiter in waiters %}
+                                                <tr>
+                                                    <td>{{ waiter.id }}</td>
+                                                    <td>{{ waiter.name }}</td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Identificação do Garçom</th>
+                                                <th>Nome</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "iot/iot_index.html" %}
+{% import 'utils/forms.html' as forms %}
+
+{% block main %}
+<main>
+    <div class="vertical-center">
+        <div class="container view">
+            <div class="justify-content-center">
+                <div class="container-fluid px-4">
+                <h3 class="mt-4">Cadastro de Atuadores</h3>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="/admin/">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="/admin/iot/">Iot</a></li>
+                    <li class="breadcrumb-item active">Cadastro de Atuadores</li>
+                </ol>
+                <div class="container-fluid px-4">
+                    <div class="row">
+                        <div class="vertical-center">
+                            <div class="container">
+                                <div class="card">
+                                    <div class="card-header">
+                                    Cadastrar Novo Atuador
+                                    </div>
+                                    <div class="card-body">
+                                        <form class="row g-3 justify-content-center" enctype="multipart/form-data" action="/admin/iot/save_actuators" method="POST">
+                                            {{ forms.input(label="Nome", name="name", id="name", box_size=3) }}
+                                            {{ forms.input(label="Modelo", name="model", id="model", box_size=3) }}
+                                            {{ forms.input(label="Marca", name="brand", id="brand", box_size=3) }}
+                                            {{ forms.input(label="Tensão", name="voltage", id="voltage", box_size=1) }}
+                                            {{ forms.input(label="Tipo", name="type", id="type", box_size=2) }}
+                                            {{ forms.textarea(label="Descrição", name="description", id="description") }}
+                                            {{ forms.checkbox(label="Está ativo?", name="is_active", id="is_active") }}
+                                            {{ forms.button(label = 'Cadastrar Sensor', box_size = 12) }}
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
